@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 20px 170px
+    margin: 10px 100px
 }
 
 .nav-menu{
@@ -14,10 +14,25 @@
 }
 
 .nav-connect{
-    padding: 20px 40px;
-    border-radius: 50px;
-    background: linear-gradient(267deg, #DA7C25, #B923E1);
+    padding: 10px 30px;
+    border-radius: 20px;
+    background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06% );
     font-size: 22px;
     cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.nav-connect:hover {
+    box-shadow: 0 0 20px 5px rgba(186, 35, 225, 0.5), 0 0 40px 10px rgba(218, 124, 37, 0.3);
+    animation: bounce 0.5s;
+    transform: scale(1.05);
+}
+
+@keyframes bounce {
+    0%   { transform: scale(1.05) translateY(0); }
+    30%  { transform: scale(1.08) translateY(-8px); }
+    50%  { transform: scale(1.05) translateY(-4px); }
+    70%  { transform: scale(1.08) translateY(-8px); }
+    100% { transform: scale(1.05) translateY(0); }
 }
 
