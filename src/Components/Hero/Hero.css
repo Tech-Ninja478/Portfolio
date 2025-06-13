@@ -44,4 +44,30 @@
     border-radius: 50px;
     background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
     cursor: pointer;
+    transition: transform 0.2s;
+}
+.hero-connect:hover {
+    animation: bounce 0.5s;
+}
+
+.hero-resume{
+    padding: 15px 45px;
+    border-radius: 50px;
+    background: linear-gradient(267deg, #25C6DA 0.36%, #23E15B 102.06%);
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;   
+    transition: transform 0.2s;
+}
+.hero-resume:hover {
+    animation: bounce 0.5s;
+}
+
+@keyframes bounce {
+    0%   { transform: translateY(0); }
+    30%  { transform: translateY(-10px); }
+    50%  { transform: translateY(-20px); }
+    70%  { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
