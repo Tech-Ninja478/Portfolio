@@ -1,0 +1,111 @@
+.about{
+    padding-bottom: 30px;
+}
+
+.about-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 80px 170px;
+    position: relative;
+}
+
+.about-title h1{
+    font-size: 80px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+}
+
+.about-sections{
+    display: flex;
+    gap: 80px;
+}
+
+.about-sections img{
+    padding-left: 70px;
+}
+
+.about-right{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.about-para{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.about-skills{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about_skill{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.3s;
+}
+
+.about_skill p{
+    min-width: 150px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.about_skill hr{
+    outline: none;
+    border: none;
+    width: 50%;
+    height: 8px;
+    border-radius: 50px;
+    background: linear-gradient(265deg, #DF8908 -5.09%, #B415FF 106.2%);
+}
+
+.about-achievements{
+    display: flex;
+    padding-top: 30px;
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom: 80px;
+}
+
+.about-achievement{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: 0.5s;
+}
+
+.about-achievement h1{
+    font-size: 60px;
+    font-weight: 700;
+    background: linear-gradient(265deg, #DF8908 50.6%, #B415FF 90.2%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-achievement p{
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;
+}
+
+.about_skill:hover{
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.about-achievement:hover{
+    transform: scale(1.15);
+    transition: 0.5s;
+}
