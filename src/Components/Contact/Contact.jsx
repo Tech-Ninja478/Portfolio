@@ -4,8 +4,37 @@ import theme_pattern from '../../assets/theme_pattern.svg'
 import mail_icon from '../../assets/mail_icon.svg'
 import location_icon from '../../assets/location_icon.svg'
 import call_icon from '../../assets/call_icon.svg'
+import { useRef } from 'react'
 
 const Contact = () => {
+    const formRef = useRef(null);
+
+    const onSubmit = async (event) => {
+        event.preventDefault();
+        const formData = new FormData(event.target);
+
+        formData.append("access_key", "f9ee2044-f3a4-4862-bb58-b906fe462a63");
+
+        const object = Object.fromEntries(formData);
+        const json = JSON.stringify(object);
+
+        const res = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: json
+        }).then((res) => res.json());
+
+        if (res.success) {
+            alert(res.message);
+            if (formRef.current) {
+                formRef.current.reset();
+            }
+        }
+    };
+
     return (
         <div id='contact' className='contact'>
             <div className='contact-title'>
@@ -33,7 +62,7 @@ const Contact = () => {
                 </div>
 
                 {/* RIGHT SIDE */}
-                <form className='contact-right'>
+                <form ref={formRef} onSubmit={onSubmit} className='contact-right'>
                     <label>Your Name</label>
                     <input type="text" placeholder='Enter Your Name' name='name' />
                     <label>Your Email</label>
