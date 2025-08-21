@@ -8,12 +8,12 @@ import project6_img from '../assets/project_6.svg'
 const mywork_data = [
     {
         w_no:1,
-        w_name:"Web design",
+        w_name:"Travel Website",
         w_img:project1_img
     },
     {
         w_no:2,
-        w_name:"Web design",
+        w_name:"Potato Disease Detection System",
         w_img:project2_img
     },
     {
