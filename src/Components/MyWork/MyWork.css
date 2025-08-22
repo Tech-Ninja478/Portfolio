@@ -1,4 +1,4 @@
-.mywork{
+.mywork {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,78 +7,98 @@
     margin: 80px 170px;
 }
 
-.mywork-title{
+.mywork-title {
     position: relative;
 }
 
-.mywork-title h1{
+.mywork-title h1 {
     font-size: 80px;
     font-weight: 600;
     color: var(--text-color);
     padding: 0 30px;
 }
 
-.mywork-title img{
+.mywork-title img {
     position: absolute;
     bottom: 0;
     right: 0;
     z-index: -1;
 }
 
-.mywork-container{
+.mywork-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 40px;
 }
 
-.mhywork-comtainer img{
-    box-sizing: border-box;
-    width: 419px;
-    height: 280px;
-    transition: 0.5s;
+.mywork-item {
+    /* The Stylish Box */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #191c26; /* Dark background */
+    border: 1px solid #3c005b; /* Themed border */
+    border-radius: 12px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    transition: transform 0.4s cubic-bezier(0.4, 0.2, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0.2, 0.2, 1);
     cursor: pointer;
 }
 
-.mywork-container img:hover {
-    transform: scale(1.08);
-    box-shadow: 0 16px 40px rgba(0,0,0,0.22);
-    transition: transform 0.4s cubic-bezier(0.4,0.2,0.2,1), box-shadow 0.4s cubic-bezier(0.4,0.2,0.2,1);
+.mywork-item:hover {
+    transform: translateY(-10px) scale(1.08); /* Lifts and scales the box on hover */
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22); /* Deeper shadow on hover */
     animation: imageBounce 0.4s;
 }
 
+/* Image styling inside the box */
+.mywork-item img {
+    box-sizing: border-box;
+    width: 100%; /* Makes image fill the container width */
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px; /* Slightly rounded corners for the image */
+    margin-bottom: 15px; /* Space between image and title */
+    transition: 0.5s;
+}
+
+/* Title styling inside the box */
+.mywork-project-title {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Button styling inside the box */
+.mywork-showmore-btn {
+    background-color: #3c005b; /* Themed button */
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.mywork-showmore-btn:hover {
+    background-color: #5d008f; /* Lighter shade on hover */
+}
+
+/* Animation remains the same but now applies to the whole item */
 @keyframes imageBounce {
     0% {
         transform: scale(1);
-        box-shadow: 0 0 0 rgba(0,0,0,0);
+        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
     }
     60% {
         transform: scale(1.12);
-        box-shadow: 0 20px 48px rgba(0,0,0,0.24);
+        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.24);
     }
     100% {
         transform: scale(1.08);
-        box-shadow: 0 16px 40px rgba(0,0,0,0.22);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
     }
-}
-
-.mywork-showmore{
-    display: flex;
-    gap: 15px;
-    border-radius: 50px;
-    border: 2px solid white;
-    padding: 30px 60px;
-    font-size: 25px;
-    font-weight: 500;
-    margin-bottom: 80px;
-    transition: 0.8s;
-    cursor: pointer;
-}
-
-.mywork-showmore:hover{
-    background: linear-gradient(90deg, #ff6a00 0%, #ee0979 100%);
-    color: white;
-    box-shadow: 0 16px 40px rgba(0,0,0,0.22);
-    border-color: var(--text-color);
-    transform: translateY(-4px) scale(1.04);
-    transition: background 0.3s, color 0.3s, box-shadow 0.3s, border-color 0.3s, transform 0.3s;
 }
