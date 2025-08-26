@@ -35,6 +35,16 @@ const Contact = () => {
         }
     };
 
+    // Handle Enter key to submit form
+    const handleKeyDown = (event) => {
+        if (event.key === 'Enter' && !event.shiftKey) {
+            event.preventDefault();
+            if (formRef.current) {
+                formRef.current.requestSubmit();
+            }
+        }
+    };
+
     return (
         <div id='contact' className='contact'>
             <div className='contact-title'>
@@ -62,7 +72,13 @@ const Contact = () => {
                 </div>
 
                 {/* RIGHT SIDE */}
-                <form ref={formRef} onSubmit={onSubmit} className='contact-right'>
+                <form
+                    ref={formRef}
+                    onSubmit={onSubmit}
+                    className='contact-right'
+                    onKeyDown={handleKeyDown}
+                    autoComplete="off"
+                >
                     <label>Your Name</label>
                     <input type="text" placeholder='Enter Your Name' name='name' />
                     <label>Your Email</label>
