@@ -7,6 +7,13 @@
 
 .hero img{
     margin-top: 50px;
+    border-radius: 10%;
+    height: 275px;
+    width: 245px;
+    transition: box-shadow 0.3s;
+}
+.hero img:hover {
+    box-shadow: 0 8px 32px 0 rgba(255,255,255,0.4);
 }
 
 .hero h1{
