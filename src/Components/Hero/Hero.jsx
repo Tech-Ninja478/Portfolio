@@ -5,10 +5,11 @@ import AnchorLink from "react-anchor-link-smooth-scroll";
 const Hero = () => {
     const qualities = [
         "B-Tech Information Technology",
-        "AIML Enthusiast",
-        "Software Developer",
-        "Full Stack Developer",
-        "Open Source Contributor"
+        "an AIML Enthusiast",
+        "a Software Developer",
+        "a Full Stack Developer",
+        "an Open Source Contributor",
+        "I like Data Structres & Algorithms"
     ];
     
     const [currentQuality, setCurrentQuality] = React.useState(0);
