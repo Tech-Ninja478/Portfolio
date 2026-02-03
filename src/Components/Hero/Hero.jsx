@@ -1,6 +1,7 @@
 import React from 'react';
 import './Hero.css';
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import ParticleBackground from '../Background/ParticleBackground';
 
 const Hero = () => {
     const qualities = [
@@ -31,6 +32,7 @@ const Hero = () => {
 
     return (
         <div id='home' className='hero'>
+            <ParticleBackground />
             {/* THE HOLOGRAPHIC CORE */}
             <div className="hologram-container">
                 <div className="hologram-glow"></div>
