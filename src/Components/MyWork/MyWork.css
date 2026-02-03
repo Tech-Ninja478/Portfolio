@@ -2,103 +2,145 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 80px;
-    margin: 80px 170px;
+    gap: 60px;
+    padding: 80px 10%;
+    background: #0f0f0f;
 }
 
 .mywork-title {
     position: relative;
+    text-align: center;
 }
 
 .mywork-title h1 {
-    font-size: 80px;
-    font-weight: 600;
-    color: var(--text-color);
-    padding: 0 30px;
+    font-size: 70px;
+    font-weight: 700;
+    color: #fff;
 }
 
 .mywork-title img {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: -5px;
+    right: -10px;
     z-index: -1;
+    width: 140px;
 }
 
 .mywork-container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    width: 100%;
 }
 
 .mywork-item {
-    /* The Stylish Box */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 15px;
+    transition: 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     display: flex;
     flex-direction: column;
+}
+
+/* --- THE IMAGE CONTAINER & OVERLAY --- */
+.mywork-img-container {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.mywork-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(30%);
+    transition: 0.6s ease;
+}
+
+.mywork-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(60, 0, 91, 0.7); /* Themed purple overlay */
+    backdrop-filter: blur(4px);
+    display: flex;
     align-items: center;
-    background-color: #191c26; /* Dark background */
-    border: 1px solid #3c005b; /* Themed border */
-    border-radius: 12px; /* Rounded corners */
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
-    transition: transform 0.4s cubic-bezier(0.4, 0.2, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0.2, 0.2, 1);
-    cursor: pointer;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.4s ease;
+    transform: translateY(20px);
+}
+
+.mywork-item:hover .mywork-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mywork-item:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.1);
 }
 
 .mywork-item:hover {
-    transform: translateY(-10px) scale(1.08); /* Lifts and scales the box on hover */
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22); /* Deeper shadow on hover */
-    animation: imageBounce 0.4s;
+    border-color: #B415FF;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Image styling inside the box */
-.mywork-item img {
-    box-sizing: border-box;
-    width: 100%; /* Makes image fill the container width */
-    height: 280px;
-    object-fit: cover;
-    border-radius: 8px; /* Slightly rounded corners for the image */
-    margin-bottom: 15px; /* Space between image and title */
-    transition: 0.5s;
-}
-
-/* Title styling inside the box */
+/* --- TEXT & BUTTONS --- */
 .mywork-project-title {
-    color: #fff;
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    font-weight: 500;
-}
-
-/* Button styling inside the box */
-.mywork-showmore-btn {
-    background-color: #3c005b; /* Themed button */
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    padding: 10px 20px;
-    font-size: 1rem;
+    margin-top: 20px;
+    font-size: 1.6rem;
     font-weight: 600;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    color: #fff;
+    padding-left: 10px;
 }
 
-.mywork-showmore-btn:hover {
-    background-color: #5d008f; /* Lighter shade on hover */
+.mywork-btn-link {
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-/* Animation remains the same but now applies to the whole item */
-@keyframes imageBounce {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 rgba(0, 0, 0, 0);
-    }
-    60% {
-        transform: scale(1.12);
-        box-shadow: 0 20px 48px rgba(0, 0, 0, 0.24);
-    }
-    100% {
-        transform: scale(1.08);
-        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
-    }
+.mywork-btn-link:hover {
+    background: #fff;
+    color: #3c005b;
+}
+
+/* --- MAIN SHOW MORE BUTTON --- */
+.mywork-footer {
+    margin-top: 40px;
+}
+
+.mywork-main-btn {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 45px;
+    border-radius: 50px;
+    background: linear-gradient(90deg, #3c005b 0%, #B415FF 100%);
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: 0.4s;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.mywork-main-btn:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 10px 30px rgba(180, 21, 255, 0.3);
+}
+
+.mywork-main-btn svg {
+    transition: 0.4s;
+}
+
+.mywork-main-btn:hover svg {
+    transform: translateX(8px);
 }

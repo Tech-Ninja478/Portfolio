@@ -21,13 +21,13 @@ const Services_Data = [
     },
     {
         s_no:"05",
-        s_name:"Data Mining",
-        s_desc:"Skilled in data mining techniques, including web scraping and data analysis. Proficient in Python libraries and striving to learn more.",
+        s_name:"Blockchain Development",
+        s_desc:"Skilled in blockchain development, including smart contract creation and deployment on Ethereum and other platforms.",
     },
     {
         s_no:"06",
-        s_name:"Marketing",
-        s_desc:"Served as the marketing admin for my college committee and helped secure multiple sponsorships for the annual Tech-Fest.",
+        s_name:"Data Structures & Algorithms",
+        s_desc:"Proficient in Data Structures and Algorithms, with a strong foundation in problem-solving and optimization techniques.",
     },
 ]
  
