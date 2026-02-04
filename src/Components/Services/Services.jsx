@@ -9,7 +9,6 @@ const Services = () => {
     <div id='services' className='services'>
         <div className="services-title">
             <h1>My Expertise</h1>
-            <img src={theme_pattern} alt="" />
         </div>
         <div className="services-container">
             {Services_Data.map((service, index) => {

@@ -2,53 +2,66 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import logo from '../../assets/logo.png';
 import underline from '../../assets/nav_underline.svg';
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [menu, setMenu] = useState("home");
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavClick = (id, menuName) => {
+    setMenu(menuName);
+    
+    // If we are already on home, just scroll
+    if (location.pathname === "/") {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // If we are on Experience page, go home first then scroll
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    }
+  };
 
   return (
     <div className="navbar">
-      <img src={logo} alt="logo" width={250} height={85} />
+      <Link to="/" onClick={() => handleNavClick('home', 'home')}>
+        <img src={logo} alt="logo" width={200} />
+      </Link>
 
       <ul className="nav-menu">
-        <li>
-          <AnchorLink className="anchor-link" offset={50} href="#home">
-            <p onClick={() => setMenu("home")}>Home</p>
-          </AnchorLink>
-          {menu === "home" && <img src={underline} alt="underline" />}
+        <li onClick={() => handleNavClick('home', 'home')}>
+          <p>Home</p>
+          {menu === "home" && <img src={underline} alt="" />}
         </li>
-
-        <li>
-          <AnchorLink className="anchor-link" offset={50} href="#about">
-            <p onClick={() => setMenu("about")}>About Me</p>
-          </AnchorLink>
-          {menu === "about" && <img src={underline} alt="underline" />}
+        <li onClick={() => handleNavClick('about', 'about')}>
+          <p>About Me</p>
+          {menu === "about" && <img src={underline} alt="" />}
         </li>
-
-        <li>
-          <AnchorLink className="anchor-link" offset={50} href="#services">
-            <p onClick={() => setMenu("services")}>Services</p>
-          </AnchorLink>
-          {menu === "services" && <img src={underline} alt="underline" />}
+        <li onClick={() => { navigate("/experience"); setMenu("experience"); }}>
+          <p>Experience</p>
+          {menu === "experience" && <img src={underline} alt="" />}
         </li>
-
-        <li>
-          <AnchorLink className="anchor-link" offset={50} href="#work">
-            <p onClick={() => setMenu("work")}>Portfolio</p>
-          </AnchorLink>
-          {menu === "work" && <img src={underline} alt="underline" />}
+        <li onClick={() => handleNavClick('work', 'work')}>
+          <p>Portfolio</p>
+          {menu === "work" && <img src={underline} alt="" />}
         </li>
-
-        <li>
-          <AnchorLink className="anchor-link" offset={50} href="#contact">
-            <p onClick={() => setMenu("contact")}>Contact</p>
-          </AnchorLink>
-          {menu === "contact" && <img src={underline} alt="underline" />}
+        <li onClick={() => handleNavClick('contact', 'contact')}>
+          <p>Contact</p>
+          {menu === "contact" && <img src={underline} alt="" />}
         </li>
       </ul>
 
-      <div className="nav-connect"><AnchorLink className="anchor-link" offset={50} href="#contact">Connect With Me</AnchorLink></div>
+      <div className="nav-connect" onClick={() => handleNavClick('contact', 'contact')}>
+        Connect With Me
+      </div>
     </div>
   );
 };

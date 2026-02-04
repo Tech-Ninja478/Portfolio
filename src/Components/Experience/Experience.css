@@ -1,0 +1,153 @@
+.experience {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px 5%;
+    width: 100%;
+    background: #050505;
+    min-height: 80vh;
+}
+
+.experience-container {
+    display: flex;
+    flex-direction: column; /* Stacks navigation above the terminal */
+    width: 90%;
+    max-width: 1400px;
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.experience-title {
+    padding-top: 30px;
+    position: relative;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 40px;
+}
+
+/* --- NAVIGATION TABS --- */
+.experience-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+}
+
+.exp-tab {
+    cursor: pointer;
+    padding: 15px 30px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid transparent;
+    transition: 0.3s;
+    text-align: center;
+}
+
+.exp-tab:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.exp-tab.active {
+    border-color: #25C6DA;
+    background: rgba(37, 198, 218, 0.05);
+}
+
+.tab-year {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: #25C6DA;
+}
+
+.tab-name {
+    color: #fff;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* --- TERMINAL STYLING --- */
+.experience-terminal {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 40px 100px rgba(0,0,0,0.4);
+}
+
+.terminal-header {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.dots span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.dots span:nth-child(1) { background: #ff5f56; }
+.dots span:nth-child(2) { background: #ffbd2e; }
+.dots span:nth-child(3) { background: #27c93f; }
+
+.terminal-body {
+    padding: 40px;
+    font-family: 'Inter', sans-serif;
+}
+
+.terminal-line {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+.command {
+    font-family: 'JetBrains Mono', monospace;
+    color: #25C6DA;
+    margin-right: 15px;
+}
+
+.value { color: #fff; font-weight: 600; }
+
+.terminal-content ul {
+    list-style: none;
+    padding-left: 30px;
+    margin-top: 15px;
+}
+
+.terminal-content li {
+    color: #aaa;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    position: relative;
+}
+
+.terminal-content li::before {
+    content: ">>";
+    position: absolute;
+    left: -25px;
+    color: #23E15B;
+    font-size: 12px;
+}
+
+.terminal-tech {
+    display: flex;
+    gap: 12px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.tech-pill {
+    padding: 6px 16px;
+    background: rgba(37, 198, 218, 0.1);
+    border: 1px solid #25C6DA;
+    color: #25C6DA;
+    border-radius: 50px;
+    font-size: 13px;
+    font-family: 'JetBrains Mono', monospace;
+}
