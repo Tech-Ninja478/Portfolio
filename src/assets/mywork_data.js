@@ -12,7 +12,7 @@ const mywork_data = [
         w_no:1,
         w_name:"Blockchain Based Academic Document Verification System",
         w_img:project7_img,
-        githubLink:""
+        githubLink:"https://github.com/ayaan-mukri/Certificate_Verification_System_for_Academia.git"
     },
     {
         w_no:2,
@@ -42,7 +42,7 @@ const mywork_data = [
         w_no:6,
         w_name:"IoT-Based Patient Health Monitoring System",
         w_img:project4_img,
-        githubLink:""
+        githubLink:"https://github.com/Tech-Ninja478/Patient-Health-Monitoring.git"
     },
     {
         w_no:7,
@@ -55,7 +55,7 @@ const mywork_data = [
         w_no:8,
         w_name:"Automated Traffic Control Using Priority Vehicles",
         w_img:project8_img,
-        githubLink:""
+        githubLink:"https://github.com/Tech-Ninja478/Automated-Traffic-Control.git"
     },
 ]
  
