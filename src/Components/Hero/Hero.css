@@ -6,7 +6,8 @@
     justify-content: center;
     gap: 40px; 
     min-height: 100vh;
-    padding: 60px 0;
+    padding: 120px 20px;
+    text-align: center;
     position: relative;
     background: #050505; /* Deep base for the neural background */
     z-index: 1; 
@@ -141,11 +142,12 @@
 /* --- 4. TYPOGRAPHY --- */
 .hero h1 {
     text-align: center;
-    width: 85%;
-    font-size: 80px;
+    width: 100%;
+    font-size: 3.5rem;
     font-weight: 700;
     line-height: 1.1;
     margin: 0;
+    max-width: 800px;
     z-index: 2;
 }
 
@@ -219,4 +221,21 @@
 @keyframes entranceBounce {
     0% { opacity: 0; transform: translateY(40px) rotateX(-90deg); filter: blur(10px); }
     100% { opacity: 1; transform: translateY(0) rotateX(0deg); filter: blur(0px); }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem; /* Smaller for mobile screens */
+        margin-top: 20px;
+    }
+    
+    .hero img {
+        width: 180px; /* Smaller profile image */
+    }
+
+    .hero-action {
+        flex-direction: column; /* Buttons stack on top of each other */
+        gap: 15px;
+    }
 }

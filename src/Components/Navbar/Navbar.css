@@ -2,34 +2,42 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 8%;
+    padding: 15px 8%; /* Slightly reduced height for better proportions */
     
-    /* --- THE STICKY LOGIC --- */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Ensures it stays above all other elements */
+    z-index: 1000;
     
-    /* --- TECHNO-SAVVY STYLING --- */
-    background: rgba(5, 5, 5, 0.85); /* Semi-transparent dark background */
-    backdrop-filter: blur(10px); /* Glass effect */
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    transition: 0.3s ease-in-out;
+    background: rgba(5, 5, 5, 0.75); /* Lower opacity for better glass effect */
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.4s ease;
 }
 
 #home {
-    padding-top: 100px; 
+    padding-top: 80px; /* Reduced from 100px to match the slimmer navbar */
 }
 
 .nav-menu {
     display: flex;
     align-items: center;
     list-style: none;
-    gap: 60px;
-    font-size: 20px;
+    gap: 40px; /* Reduced from 60px - this was likely causing the "zoomed" feel */
+    font-size: 17px; /* Reduced from 20px for a more professional look */
 }
 
+/* Add this to handle laptop screens specifically */
+@media (max-width: 1200px) {
+    .nav-menu {
+        gap: 25px;
+        font-size: 16px;
+    }
+    .navbar {
+        padding: 15px 5%;
+    }
+}
 
 .nav-menu li {
     display: flex;
@@ -38,58 +46,41 @@
     gap: 5px;
     cursor: pointer; 
     transition: 0.3s ease-in-out;
+    color: #e0e0e0; /* Subtle off-white for better readability */
 }
 
-
 .nav-menu li:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
     color: #25C6DA;
 }
 
-.navbar img {
-    cursor: pointer;
-}
-
 .nav-connect {
-    padding: 10px 30px;
-    border-radius: 20px;
+    padding: 10px 25px; /* Tighter padding */
+    border-radius: 50px; /* Fully rounded looks more modern */
     background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1 102.06%);
-    font-size: 22px;
-    cursor: pointer;
-    transition: box-shadow 0.3s, transform 0.3s;
-    cursor: pointer;
+    font-size: 16px; /* Reduced from 22px - 22px is huge for a nav button! */
+    font-weight: 600;
+    color: white;
     transition: 0.3s;
 }
 
-.nav-connect:hover {
-    box-shadow: 0 0 20px 5px rgba(186, 35, 225, 0.5), 0 0 40px 10px rgba(218, 124, 37, 0.3);
-    animation: bounce 0.5s;
-    transform: scale(1.05);
-}
+/* --- MOBILE & TABLET REFINEMENT --- */
 
-@keyframes bounce {
-    0% {
-        transform: scale(1.05) translateY(0);
+@media (max-width: 768px) {
+    .navbar {
+        padding: 12px 5%;
     }
 
-    30% {
-        transform: scale(1.08) translateY(-8px);
+    .nav-menu {
+        display: none; /* Keeps it clean until you add a hamburger toggle */
     }
 
-    50% {
-        transform: scale(1.05) translateY(-4px);
+    .nav-connect {
+        padding: 8px 18px;
+        font-size: 14px;
     }
-
-    70% {
-        transform: scale(1.08) translateY(-8px);
+    
+    .nav-logo {
+        width: 120px; /* Slightly smaller logo for mobile */
     }
-
-    100% {
-        transform: scale(1.05) translateY(0);
-    }
-}
-
-.anchor-link {
-    text-decoration: none;
-    color: white;
 }

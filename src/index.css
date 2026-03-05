@@ -13,8 +13,27 @@ body{
 html, body {
   max-width: 100%;
   overflow-x: hidden;
+  font-size: 16px; 
+  scroll-behavior: smooth;
 }
 
 * {
   box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px; /* Everything using 'rem' shrinks automatically */
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Crucial: padding won't push width beyond 100% */
+}
+
+body {
+  overflow-x: hidden; /* Stops the annoying side-to-side wobble on mobile */
+  width: 100%;
 }
